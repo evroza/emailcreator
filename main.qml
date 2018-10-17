@@ -1,9 +1,46 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
+import QtQuick.Controls 1.4
+import QtQuick.Controls.Styles 1.4
+import QtWinExtras 1.0
 
-Window {
+
+ApplicationWindow {
+    id: backlight
+    flags: Qt.Window | Qt.FramelessWindowHint
     visible: true
-    width: 640
-    height: 480
-    title: qsTr("Hello World")
+    title: qsTr("backlight")
+    width: 500
+    height: 500
+    x: (Screen.width - width) / 2
+    y: (Screen.height - height) / 2
+    color: "transparent"
+
+    property real slideValue
+    signal onSlide(real value)
+
+    TaskbarButton {
+            overlay.iconSource: "qrc:/images/Icon.png"
+            overlay.accessibleDescription: "Loading"
+
+            progress.visible: true
+            progress.value: 50
+        }
+
+
+    Rectangle {
+        anchors.centerIn: parent
+        width: parent.width
+        height: 500
+        color: "transparent"
+
+        Rectangle {
+            anchors.fill: parent
+            radius: 3
+            opacity: 0.9
+            color: "#06111c"
+        }
+
+
+    }
 }

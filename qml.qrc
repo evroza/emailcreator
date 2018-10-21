@@ -1,8 +1,14 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>images/Icon.png</file>
         <file>main.cpp</file>
-        <file>images/test.ico</file>
+        <file>images/close-hover.png</file>
+        <file>images/close-idle.png</file>
+        <file>images/create-icon.png</file>
+        <file>images/icon.png</file>
+        <file>images/maximize.png</file>
+        <file>images/minimize.png</file>
+        <file>images/settings.png</file>
+        <file>images/tick-icon.png</file>
     </qresource>
 </RCC>

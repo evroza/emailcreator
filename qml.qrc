@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>images/Icon.png</file>
         <file>main.cpp</file>
+        <file>images/test.ico</file>
     </qresource>
 </RCC>

@@ -10,5 +10,7 @@
         <file>images/minimize.png</file>
         <file>images/settings.png</file>
         <file>images/tick-icon.png</file>
+        <file>AccountTypeList.qml</file>
+        <file>TextLabelInput.qml</file>
     </qresource>
 </RCC>

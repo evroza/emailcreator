@@ -16,7 +16,7 @@ ApplicationWindow {
     height: 500
     x: (Screen.width - width) / 2
     y: (Screen.height - height) / 2
-    color: "transparent"
+    color: "#06111c"
 
     TaskbarButton {
         overlay {
@@ -49,19 +49,18 @@ ApplicationWindow {
             Layout.row: 1
             Layout.column: 1
             clip: true
-            color: "blue"
+            color: "transparent"
 
             Rectangle {
                 id: mainIcon
                 width: parent.width
                 height: 120
-                color: "green"
-
+                color: "transparent"
                 Image {
                     id: mainLogoID
                     source: "qrc:/images/icon.png"
-                    width: parent.width
-                    height: parent.height
+                    width: 150
+                    height: 100
                     anchors.centerIn: parent
                 }
             }
@@ -71,7 +70,9 @@ ApplicationWindow {
                 anchors.top: mainIcon.bottom
                 width: parent.width
                 height: 150
-                color: "yellow"
+                color: "transparent"
+
+                AccountTypeList {}
             }
 
             Rectangle {
@@ -81,6 +82,7 @@ ApplicationWindow {
                 height: 217
                 color: "brown"
             }
+
 
         }
         Rectangle {

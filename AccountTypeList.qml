@@ -2,7 +2,8 @@ import QtQuick 2.9
 
 
 Item {
-    anchors.fill: parent
+//    anchors.fill: parent
+    width: 240
     Rectangle {
         color: "white"
         width: parent.width

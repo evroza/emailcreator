@@ -12,5 +12,6 @@
         <file>images/tick-icon.png</file>
         <file>AccountTypeList.qml</file>
         <file>TextLabelInput.qml</file>
+        <file>WindowControls.qml</file>
     </qresource>
 </RCC>

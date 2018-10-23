@@ -72,7 +72,9 @@ ApplicationWindow {
                 height: 150
                 color: "transparent"
 
-                AccountTypeList {}
+                AccountTypeList {
+                    x: 8
+                }
             }
 
             Rectangle {
@@ -80,7 +82,22 @@ ApplicationWindow {
                 anchors.top: accountType.bottom
                 width: parent.width
                 height: 217
-                color: "brown"
+                color: "transparent"
+
+                TextLabelInput {
+                    id: anticaptchaKeyID
+                    labelTextID.text: "AntiCaptcha API Key:"
+                    x: 8
+                    y: 20
+                }
+
+                TextLabelInput {
+                    id: deathbycaptchaKeyID
+                    x: 8
+                    anchors.topMargin: 6
+                    labelTextID.text: "DeathbyCaptcha API Key:"
+                    anchors.top: anticaptchaKeyID.bottom
+                }
             }
 
 

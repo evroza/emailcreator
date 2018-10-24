@@ -11,12 +11,16 @@ ApplicationWindow {
     id: emailCreator
     flags: Qt.Window | Qt.FramelessWindowHint
     visible: true
-    title: qsTr("EmailCreator")
+    title: qsTr("Email Creator")
     width: 750
     height: 500
     x: (Screen.width - width) / 2
     y: (Screen.height - height) / 2
     color: "#06111c"
+
+    property var settingsDialog: SettingsDialog {
+        onSettingsDialogClosed: { visible = false }
+    }
 
     TaskbarButton {
         overlay {
@@ -120,11 +124,15 @@ ApplicationWindow {
                 /*
                   * Window controls section
                 */
-                WindowControls{
+                WindowControls {
                     anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.rightMargin: 20
                     anchors.topMargin: -5
+
+                    onSettingsButtonClicked: {
+                        settingsDialog.visible = true;
+                    }
                 }
             }
 

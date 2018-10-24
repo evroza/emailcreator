@@ -3,8 +3,10 @@ import QtQuick.Window 2.3
 
 Item {
 
+    id: windowControlsID
     property int singleControlWidth: 25
 
+    signal settingsButtonClicked
     width: minimizeButtonID.width + maximizeButtonID.width + closeButtonID.width
 
     Rectangle {
@@ -26,6 +28,7 @@ Item {
 
         }
 
+
         MouseArea {
             id: settingsMouseArea
             anchors.fill: parent
@@ -38,6 +41,9 @@ Item {
 
                     parent.focus = true
                     settingsButtonID.color = "white";
+
+                    // Open settings Dialog
+                    windowControlsID.settingsButtonClicked()
                 }
 
 

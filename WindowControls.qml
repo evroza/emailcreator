@@ -43,8 +43,13 @@ Item {
 
             }
             onReleased: {
-                settingsButtonID.color = "#6f5d82";
-                settingsImageID.source = "qrc:/images/settings-hover.png";
+                if(containsMouse){
+                    settingsButtonID.color = "#6f5d82";
+                    settingsImageID.source = "qrc:/images/settings-hover.png";
+                } else {
+                    settingsButtonID.color = "transparent";
+                    settingsImageID.source = "qrc:/images/settings.png";
+                }
             }
             onHoveredChanged: {
                 if(containsMouse){

@@ -12,7 +12,7 @@ ApplicationWindow {
     flags: Qt.Window | Qt.FramelessWindowHint
     visible: true
     title: qsTr("EmailCreator")
-    width: 700
+    width: 750
     height: 500
     x: (Screen.width - width) / 2
     y: (Screen.height - height) / 2
@@ -162,12 +162,97 @@ ApplicationWindow {
                 width: parent.width
                 anchors.top: recoveryEmail.bottom
                 height: 115
-                color: "#37a6ed"
+                color: "transparent"
 
                 SecurityQuestions{
                     anchors.top: parent.top
                     anchors.right: parent.right
                     anchors.rightMargin: 5
+                }
+            }
+
+            Rectangle {
+                id: submitArea
+                width: parent.width
+                anchors.top: securityQuestions.bottom
+                height: 110
+                color: "transparent"
+
+                Rectangle {
+                    id:  registerButtonID
+                    width: registerButtonTextID.implicitWidth + 80
+                    height: registerButtonTextID.implicitHeight + 25
+                    anchors.centerIn: parent
+
+                    color: "#8dc63f"
+                    radius: 3
+                    clip: true
+
+                    Text {
+                        id: registerButtonTextID
+                        text: "Register Acount(s)"
+                        anchors.centerIn: parent
+                        anchors.horizontalCenterOffset: -20
+                        font.family: "Calibri"
+                        font.pixelSize: 17
+                        font.letterSpacing: 0.5
+                        font.weight: Font.DemiBold
+                        color: "white"
+                    }
+
+                    Image {
+                        id: settingsImageID
+                        source: "qrc:/images/create-icon.png"
+                        anchors.left: registerButtonTextID.right
+                        anchors.leftMargin: 5
+                        anchors.verticalCenter: registerButtonTextID.verticalCenter
+                        anchors.verticalCenterOffset: -4
+                        opacity: 1
+                        width: 31
+                        height: width
+                        fillMode: Image.PreserveAspectFit
+
+                    }
+
+                    MouseArea {
+                        id: registerButtonMouseArea
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        hoverEnabled: true
+                        acceptedButtons: Qt.LeftButton
+                        onPressed: {
+                            if(containsPress){
+                                print("'Register Account(s)' button pressed!")
+
+                                parent.focus = true
+                                registerButtonID.color = "#73a333";
+
+                            }
+
+
+                        }
+                        onReleased: {
+                            if(containsMouse){
+                                registerButtonID.color = "#b1e868";
+                            } else {
+                                registerButtonID.color = "#8dc63f";
+                            }
+
+                        }
+                        onHoveredChanged: {
+                            if(containsMouse){
+                                print("Mouse hovered into 'Register Account(s)' button area ...");
+                                registerButtonID.color = "#b1e868";
+
+                            } else {
+                                print("Mouse hovered out of 'Register Account(s)' button area ...");
+                                registerButtonID.color = "#8dc63f";
+                            }
+
+
+                        }
+                    }
+
                 }
             }
         }

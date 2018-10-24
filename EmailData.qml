@@ -5,7 +5,7 @@ Item {
     id: emailDataLoadID
 
     property bool loadFromFile: false
-    property int textInputWidths: 185
+    property int textInputWidths: 207
     property string disabledLabelColor: "#494646"
     property string disabledTextInputColor: "#081a2c"
 

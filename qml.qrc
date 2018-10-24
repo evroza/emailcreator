@@ -18,5 +18,6 @@
         <file>CustomCheckBox.qml</file>
         <file>RecoveryEmail.qml</file>
         <file>SecurityQuestions.qml</file>
+        <file>SettingsDialog.qml</file>
     </qresource>
 </RCC>

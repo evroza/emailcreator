@@ -110,21 +110,37 @@ ApplicationWindow {
             Layout.alignment: Qt.AlignTop
             Layout.row: 1
             Layout.column: 2
-            color: "red"
+            color: "transparent"
 
             Rectangle {
                 id: windowControls
                 width: parent.width
                 height: 30
-                color: "purple"
+                color: "transparent"
+                /*
+                  * Window controls section
+                */
+                WindowControls{
+                    anchors.right: parent.right
+                    anchors.top: parent.top
+                    anchors.rightMargin: 20
+                    anchors.topMargin: -5
+                }
             }
 
             Rectangle {
                 id: userDetails
                 width: parent.width
                 anchors.top: windowControls.bottom
-                height: 130
-                color: "orange"
+                height: 140
+                color: "transparent"
+
+                EmailData {
+                    anchors.bottom: parent.bottom
+                    anchors.right: parent.right
+                    anchors.rightMargin: 5
+                }
+
             }
 
             Rectangle {
@@ -132,7 +148,13 @@ ApplicationWindow {
                 width: parent.width
                 anchors.top: userDetails.bottom
                 height: 100
-                color: "turquoise"
+                color: "transparent"
+
+                RecoveryEmail {
+                    anchors.top: parent.top
+                    anchors.right: parent.right
+                    anchors.rightMargin: 5
+                }
             }
 
             Rectangle {
@@ -141,6 +163,12 @@ ApplicationWindow {
                 anchors.top: recoveryEmail.bottom
                 height: 115
                 color: "#37a6ed"
+
+                SecurityQuestions{
+                    anchors.top: parent.top
+                    anchors.right: parent.right
+                    anchors.rightMargin: 5
+                }
             }
         }
     }

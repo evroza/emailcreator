@@ -7,7 +7,7 @@ Item {
 
     property alias labelTextID: inputLabelID
     property alias textInputID: textEdit
-    property alias textEditBoundBoxID: textEditBoundBoxID //textEditBoundBoxID can be used to control the input width, height and border
+    property alias textEditBoundBoxID: textEditBoundBoxID //textEditBoundBoxID can be used to control the input width, height, color and border
     property alias placeHolderTextID: placeHolderTextID
 
     width: textEditBoundBoxID.width + 5
@@ -31,6 +31,7 @@ Item {
         height: 35
         clip: true
         //radius: 5
+        color: "white"
         border {
             width: 1
             color: "#CCC"
@@ -44,6 +45,7 @@ Item {
             font.pixelSize: 16
             color: "#666363"
             font.letterSpacing: 1
+            enabled: true
 
 //            horizontalAlignment: TextInput.AlignHCenter
 
